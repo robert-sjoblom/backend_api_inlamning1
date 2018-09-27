@@ -1,0 +1,9 @@
+{
+  "env": {
+    "SERVER_HOST": "localhost",
+    "SERVER_PORT": 3001,
+    "MONGO_DB_CONNECTIONSTRING": "mongodb://localhost:27017/demo20180906",
+    "PRIVATE_SECRET_KEY": "vilkensecretkeysomvivillha",
+    "LOGGING": true
+  }
+}

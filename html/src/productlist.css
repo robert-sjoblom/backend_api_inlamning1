@@ -1,0 +1,25 @@
+.productlist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.child {
+  margin: 5px;
+  height: 100px;
+  min-width: 200px;
+  max-width: 200px;
+  border: 1px solid pink;
+}
+
+@media (max-width: 700px) {
+  .child {
+    flex: 1 0 25%;
+  }  
+}
+
+@media (min-width: 700px) {
+  .child {
+    flex: 1 0 21%;
+  }  
+}
