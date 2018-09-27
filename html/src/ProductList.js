@@ -18,10 +18,15 @@ class ProductList extends Component {
       })
   }
 
+  del = id => {
+    const newProducts = this.state.products.filter(prod => prod.id !== id)
+    this.setState({ products: newProducts })
+  }
+
   render() {
     const products = this.state.products.map(product => 
       <div className="child"  key={product.id}>
-        <Product product={product} />
+        <Product product={product} del={this.del}/>
       </div>)
     return (
       <div className="productlist">

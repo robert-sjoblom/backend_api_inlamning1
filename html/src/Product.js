@@ -42,6 +42,17 @@ class Product extends React.Component {
     })
   }
 
+  remove = e => {
+    e.preventDefault();
+    const options = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+      },
+    };
+    fetch(`http://localhost:3001/api/products/${this.state.id}`, options)
+      .then(this.props.del(this.state.id));
+  }
 
 
   render() {
@@ -63,6 +74,7 @@ class Product extends React.Component {
       <div>
         {name}
         {desc}
+        <button onClick={this.remove}>Delete Product</button>
       </div>
     )
   }
