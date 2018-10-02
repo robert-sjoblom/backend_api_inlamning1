@@ -4,8 +4,14 @@ class ProductForm extends React.Component {
 
   submit = e => {
     e.preventDefault();
-    console.log(e.target.productName.value);
-    console.log(e.target.productDescription.value);
+    fetch('http://localhost:3001/api/products', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json, text/plain */*',
+            'Content-Type': 'application/json'
+        },
+        body:JSON.stringify({ name: e.target.productName.value, desc: e.target.productDescription.value})
+    })
   }
 
   render() {
